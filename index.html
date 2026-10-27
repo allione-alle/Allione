@@ -10,41 +10,91 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
+<meta name="theme-color" content="#102a43">
+
+<meta name="description" content="AllInOne Abroad: locuri de muncă, chirii, anunțuri, turism și informații pentru viața în străinătate.">
+
 <title>AllInOne Abroad</title>
 
 <style>
 
+:root{--navy:#102a43;--blue:#1769aa;--gold:#f4b942;--bg:#f3f6fa;--text:#243447;--muted:#62758a;--border:#dce5ee}
+
 *{box-sizing:border-box}
 
-body{margin:0;font-family:Arial,sans-serif;background:#f2f5f9;color:#17243a}
+html{scroll-behavior:smooth;scroll-padding-top:80px}
 
-header{background:#12345a;color:white;text-align:center;padding:30px 15px}
+body{margin:0;font-family:Arial,Helvetica,sans-serif;background:var(--bg);color:var(--text);line-height:1.6}
 
-header h1{margin:0;font-size:30px}
+header{position:sticky;top:0;z-index:10;background:var(--navy);color:white;box-shadow:0 3px 12px #0002}
 
-header p{margin-bottom:0}
+nav{max-width:1200px;margin:auto;padding:14px 20px;display:flex;justify-content:space-between;align-items:center;gap:15px;flex-wrap:wrap}
 
-nav{display:flex;justify-content:center;gap:18px;flex-wrap:wrap;background:#0c2440;padding:14px}
+.logo{color:white;text-decoration:none;font-weight:900;font-size:22px}
 
-nav a{color:white;text-decoration:none;font-weight:bold}
+.logo span{color:var(--gold)}
 
-main{max-width:850px;margin:25px auto;padding:0 15px}
+.navlinks{display:flex;gap:13px;flex-wrap:wrap}
 
-h2{text-align:center}
+.navlinks a{color:white;text-decoration:none;font-size:13px}
 
-.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(145px,1fr));gap:15px}
+.navlinks a:hover{color:var(--gold)}
 
-.card{display:block;background:white;padding:24px 12px;border-radius:12px;text-align:center;text-decoration:none;color:#12345a;box-shadow:0 2px 8px #0001}
+.hero{background:linear-gradient(130deg,#102a43,#1769aa);color:white;text-align:center;padding:60px 20px}
 
-.card strong{display:block;font-size:18px;margin:10px 0}
+.hero h1{font-size:clamp(31px,5vw,52px);line-height:1.15;max-width:850px;margin:12px auto}
 
-.card span{font-size:30px}
+.hero p{color:#e2edf8}
 
-.card:hover{background:#e3edfa}
+.search{display:flex;gap:8px;max-width:700px;margin:25px auto}
 
-.panel{background:white;border-radius:12px;padding:22px;margin-top:20px}
+input,select{width:100%;min-width:0;padding:13px;border:1px solid var(--border);border-radius:8px;font:inherit;background:white}
 
-footer{text-align:center;padding:25px;color:#536174}
+.search input{flex:1}
+
+button,.btn{display:inline-block;padding:11px 15px;background:var(--blue);color:white;border:0;border-radius:8px;text-decoration:none;font-weight:bold;cursor:pointer}
+
+.search button{background:var(--gold);color:var(--navy)}
+
+.wrap{max-width:1200px;margin:auto;padding:0 20px}
+
+section{padding:38px 0;scroll-margin-top:75px}
+
+.heading{margin-bottom:20px}
+
+.heading h2{color:var(--navy);font-size:27px;margin:0}
+
+.heading p{color:var(--muted);margin:4px 0}
+
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(225px,1fr));gap:16px}
+
+.card{background:white;border:1px solid var(--border);border-radius:13px;padding:20px;display:flex;flex-direction:column;align-items:flex-start;box-shadow:0 4px 15px #102a4308}
+
+.card h3{color:var(--navy);margin:8px 0;font-size:19px}
+
+.card p{color:var(--muted);font-size:14px;margin:0 0 16px}
+
+.card .btn{margin-top:auto;font-size:13px}
+
+.emoji{font-size:29px}
+
+.tag{display:inline-block;background:#e8f1fa;color:#1769aa;border-radius:20px;padding:4px 9px;font-size:11px;font-weight:bold;margin-top:6px}
+
+.notice{background:white;border:1px solid var(--border);padding:18px;border-radius:10px;font-size:14px;margin:15px 0 30px}
+
+#resultsInfo{font-size:14px;color:var(--muted);margin:8px 0}
+
+.empty{display:none;padding:20px;background:white;border-radius:10px}
+
+footer{background:var(--navy);color:white;text-align:center;padding:30px 20px}
+
+footer a{color:var(--gold)}
+
+footer p{font-size:13px}
+
+[hidden]{display:none!important}
+
+@media(max-width:600px){nav{align-items:flex-start}.navlinks{gap:10px}.hero{padding:40px 15px}.search{flex-direction:column}.search button{width:100%}}
 
 </style>
 
@@ -54,93 +104,431 @@ footer{text-align:center;padding:25px;color:#536174}
 
 <header>
 
-<h1>AllInOne Abroad</h1>
-
-<p>Tot ce ai nevoie pentru viața în străinătate</p>
-
-</header>
-
 <nav>
 
-<a href="#acasa">Acasă</a>
+<a class="logo" href="#acasa">🌍 AllInOne <span>Abroad</span></a>
+
+<div class="navlinks">
 
 <a href="#chirii">Chirii</a>
 
-<a href="#locuri-de-munca">Locuri de muncă</a>
+<a href="#joburi">Joburi</a>
 
 <a href="#anunturi">Anunțuri</a>
 
-<a href="#ghiduri">Ghiduri utile</a>
+<a href="#turism">Turism</a>
+
+<a href="#ghiduri">Ghiduri</a>
+
+</div>
 
 </nav>
 
-<main>
+</header>
 
-<section id="acasa">
+<div class="hero" id="acasa">
 
-<h2>Descoperă AllInOne Abroad</h2>
+<div style="color:#f4b942;font-weight:bold;letter-spacing:2px">YOUR LIFE ABROAD, MADE EASIER</div>
 
-<p>Găsește informații utile pentru a locui, a lucra și a te organiza în străinătate.</p>
+<h1>Totul pentru viața ta în străinătate</h1>
 
-<div class="cards">
+<p>Locuri de muncă, chirii, anunțuri și ghiduri utile într-un singur loc.</p>
 
-<a class="card" href="#chirii"><span>🏠</span><strong>Chirii</strong>Găsește o locuință</a>
+<form class="search" id="searchForm">
 
-<a class="card" href="#locuri-de-munca"><span>💼</span><strong>Locuri de muncă</strong>Descoperă oportunități</a>
+<input id="searchInput" type="search" placeholder="Caută: chirii, joburi, mașini, taxe..." aria-label="Caută platforme">
 
-<a class="card" href="#anunturi"><span>🛍️</span><strong>Anunțuri</strong>Cumpără și vinde</a>
+<button type="submit">Caută</button>
 
-<a class="card" href="#ghiduri"><span>🌍</span><strong>Ghiduri utile</strong>Informații practice</a>
+</form>
+
+<div>🇮🇪 Irlanda · 🇬🇧 Marea Britanie · 🇪🇺 Europa</div>
+
+</div>
+
+<main class="wrap">
+
+<p id="resultsInfo" aria-live="polite"></p>
+
+<div id="empty" class="empty">Nu am găsit rezultate. Încearcă alt cuvânt sau apasă „Caută” fără text pentru a vedea toate platformele.</div>
+
+<section id="chirii">
+
+<div class="heading"><h2>🏠 Chirii și cazare</h2><p>Platforme imobiliare pentru Irlanda, UK și Europa.</p></div>
+
+<div class="grid">
+
+<article class="card" data-search="daft chirii case apartamente camere irlanda">
+
+<div class="emoji">🇮🇪</div><span class="tag">IRLANDA</span><h3>Daft.ie</h3><p>Case, apartamente și camere de închiriat.</p><a class="btn" href="https://www.daft.ie/" target="_blank" rel="noopener noreferrer">Caută chirii ↗</a>
+
+</article>
+
+<article class="card" data-search="rent.ie chirii camere locuinte irlanda">
+
+<div class="emoji">🏠</div><span class="tag">IRLANDA</span><h3>Rent.ie</h3><p>Oferte de închiriere pentru locuințe și camere.</p><a class="btn" href="https://www.rent.ie/" target="_blank" rel="noopener noreferrer">Vezi locuințe ↗</a>
+
+</article>
+
+<article class="card" data-search="myhome proprietati apartamente chirii irlanda">
+
+<div class="emoji">🔑</div><span class="tag">IRLANDA</span><h3>MyHome.ie</h3><p>Proprietăți de închiriat și de vânzare.</p><a class="btn" href="https://www.myhome.ie/" target="_blank" rel="noopener noreferrer">Deschide ↗</a>
+
+</article>
+
+<article class="card" data-search="rightmove chirii case uk anglia marea britanie">
+
+<div class="emoji">🇬🇧</div><span class="tag">UK</span><h3>Rightmove</h3><p>Case și apartamente de închiriat sau cumpărat.</p><a class="btn" href="https://www.rightmove.co.uk/" target="_blank" rel="noopener noreferrer">Caută locuințe ↗</a>
+
+</article>
+
+<article class="card" data-search="zoopla proprietati chirii anglia uk">
+
+<div class="emoji">🏘️</div><span class="tag">UK</span><h3>Zoopla</h3><p>Locuințe și informații despre proprietăți.</p><a class="btn" href="https://www.zoopla.co.uk/" target="_blank" rel="noopener noreferrer">Explorează ↗</a>
+
+</article>
+
+<article class="card" data-search="housinganywhere camere cazare europa international">
+
+<div class="emoji">🌍</div><span class="tag">EUROPA</span><h3>HousingAnywhere</h3><p>Camere și locuințe în diferite orașe europene.</p><a class="btn" href="https://housinganywhere.com/" target="_blank" rel="noopener noreferrer">Caută cazare ↗</a>
+
+</article>
 
 </div>
 
 </section>
 
-<section class="panel" id="chirii">
+<section id="joburi">
 
-<h2>🏠 Chirii</h2>
+<div class="heading"><h2>💼 Locuri de muncă</h2><p>Caută oportunități de angajare și recrutare.</p></div>
 
-<p>Aici vom publica anunțuri de locuințe disponibile în Irlanda și în alte țări.</p>
+<div class="grid">
 
-<p>Poți reveni pentru a consulta anunțurile pe măsură ce vor fi adăugate.</p>
+<article class="card" data-search="jobsireland locuri munca oficial irlanda">
 
-<a href="#acasa">← Înapoi la pagina principală</a>
+<div class="emoji">🇮🇪</div><span class="tag">OFICIAL</span><h3>JobsIreland</h3><p>Serviciul de angajare al statului irlandez.</p><a class="btn" href="https://jobsireland.ie/" target="_blank" rel="noopener noreferrer">Caută joburi ↗</a>
+
+</article>
+
+<article class="card" data-search="eures europa locuri munca europene">
+
+<div class="emoji">🇪🇺</div><span class="tag">EUROPA</span><h3>EURES</h3><p>Locuri de muncă și informații despre munca în Europa.</p><a class="btn" href="https://eures.europa.eu/" target="_blank" rel="noopener noreferrer">Explorează ↗</a>
+
+</article>
+
+<article class="card" data-search="indeed joburi irlanda angajare">
+
+<div class="emoji">📋</div><span class="tag">IRLANDA</span><h3>Indeed Ireland</h3><p>Oferte de muncă în numeroase domenii.</p><a class="btn" href="https://ie.indeed.com/" target="_blank" rel="noopener noreferrer">Caută joburi ↗</a>
+
+</article>
+
+<article class="card" data-search="irishjobs locuri munca irlanda">
+
+<div class="emoji">💼</div><span class="tag">IRLANDA</span><h3>IrishJobs</h3><p>Oferte profesionale și posturi specializate.</p><a class="btn" href="https://www.irishjobs.ie/" target="_blank" rel="noopener noreferrer">Vezi posturi ↗</a>
+
+</article>
+
+<article class="card" data-search="jobs.ie angajare locuri munca irlanda">
+
+<div class="emoji">🧰</div><span class="tag">IRLANDA</span><h3>Jobs.ie</h3><p>Oportunități de angajare în Irlanda.</p><a class="btn" href="https://www.jobs.ie/" target="_blank" rel="noopener noreferrer">Caută joburi ↗</a>
+
+</article>
+
+<article class="card" data-search="publicjobs locuri munca stat irlanda">
+
+<div class="emoji">🏛️</div><span class="tag">SECTOR PUBLIC</span><h3>PublicJobs</h3><p>Posturi în serviciile publice irlandeze.</p><a class="btn" href="https://www.publicjobs.ie/" target="_blank" rel="noopener noreferrer">Vezi posturi ↗</a>
+
+</article>
+
+<article class="card" data-search="linkedin jobs angajare recrutare europa">
+
+<div class="emoji">👔</div><h3>LinkedIn Jobs</h3><p>Locuri de muncă și contacte profesionale.</p><a class="btn" href="https://www.linkedin.com/jobs/" target="_blank" rel="noopener noreferrer">Deschide ↗</a>
+
+</article>
+
+<article class="card" data-search="find a job uk anglia guvern">
+
+<div class="emoji">🇬🇧</div><span class="tag">UK</span><h3>Find a Job</h3><p>Serviciul guvernamental pentru căutarea unui loc de muncă în UK.</p><a class="btn" href="https://www.gov.uk/find-a-job" target="_blank" rel="noopener noreferrer">Caută joburi ↗</a>
+
+</article>
+
+</div>
 
 </section>
 
-<section class="panel" id="locuri-de-munca">
+<section id="anunturi">
 
-<h2>💼 Locuri de muncă</h2>
+<div class="heading"><h2>🛒 Anunțuri și cumpărături</h2><p>Mașini, produse second-hand și marketplace-uri.</p></div>
 
-<p>Aici vom adăuga oferte de muncă, țara, localitatea și detaliile pentru aplicare.</p>
+<div class="grid">
 
-<a href="#acasa">← Înapoi la pagina principală</a>
+<article class="card" data-search="donedeal masini vanzari cumparari anunturi irlanda">
+
+<div class="emoji">🚗</div><h3>DoneDeal</h3><p>Mașini și anunțuri diverse în Irlanda.</p><a class="btn" href="https://www.donedeal.ie/" target="_blank" rel="noopener noreferrer">Vezi anunțuri ↗</a>
+
+</article>
+
+<article class="card" data-search="carsireland masini autoturisme irlanda">
+
+<div class="emoji">🚘</div><h3>CarsIreland</h3><p>Mașini noi și second-hand.</p><a class="btn" href="https://www.carsireland.ie/" target="_blank" rel="noopener noreferrer">Caută mașini ↗</a>
+
+</article>
+
+<article class="card" data-search="adverts.ie produse vanzari cumparari irlanda">
+
+<div class="emoji">📦</div><h3>Adverts.ie</h3><p>Produse second-hand și anunțuri locale.</p><a class="btn" href="https://www.adverts.ie/" target="_blank" rel="noopener noreferrer">Vezi oferte ↗</a>
+
+</article>
+
+<article class="card" data-search="facebook marketplace obiecte mobilier vanzare">
+
+<div class="emoji">🛍️</div><h3>Facebook Marketplace</h3><p>Obiecte și produse vândute în apropiere.</p><a class="btn" href="https://www.facebook.com/marketplace/" target="_blank" rel="noopener noreferrer">Deschide ↗</a>
+
+</article>
+
+<article class="card" data-search="gumtree uk vanzari obiecte anunturi">
+
+<div class="emoji">🇬🇧</div><h3>Gumtree</h3><p>Anunțuri locale și produse second-hand în UK.</p><a class="btn" href="https://www.gumtree.com/" target="_blank" rel="noopener noreferrer">Vezi anunțuri ↗</a>
+
+</article>
+
+<article class="card" data-search="ebay cumparaturi produse licitatii">
+
+<div class="emoji">📦</div><h3>eBay Ireland</h3><p>Produse noi și second-hand, inclusiv licitații.</p><a class="btn" href="https://www.ebay.ie/" target="_blank" rel="noopener noreferrer">Cumpără ↗</a>
+
+</article>
+
+</div>
 
 </section>
 
-<section class="panel" id="anunturi">
+<section id="turism">
 
-<h2>🛍️ Anunțuri</h2>
+<div class="heading"><h2>✈️ Turism și călătorii</h2><p>Planifică zboruri, transport și cazare.</p></div>
 
-<p>Aici vom putea adăuga anunțuri de vânzare, servicii și alte oferte.</p>
+<div class="grid">
 
-<a href="#acasa">← Înapoi la pagina principală</a>
+<article class="card" data-search="skyscanner zboruri avioane bilete">
+
+<div class="emoji">✈️</div><h3>Skyscanner</h3><p>Compară opțiuni de zbor.</p><a class="btn" href="https://www.skyscanner.net/" target="_blank" rel="noopener noreferrer">Caută zboruri ↗</a>
+
+</article>
+
+<article class="card" data-search="booking hoteluri cazare vacanta">
+
+<div class="emoji">🏨</div><h3>Booking.com</h3><p>Hoteluri, apartamente și cazare pentru vacanțe.</p><a class="btn" href="https://www.booking.com/" target="_blank" rel="noopener noreferrer">Caută cazare ↗</a>
+
+</article>
+
+<article class="card" data-search="google maps harta trasee destinatii">
+
+<div class="emoji">🗺️</div><h3>Google Maps</h3><p>Hărți, trasee și locuri de vizitat.</p><a class="btn" href="https://maps.google.com/" target="_blank" rel="noopener noreferrer">Deschide harta ↗</a>
+
+</article>
+
+<article class="card" data-search="transport for ireland autobuze transport public">
+
+<div class="emoji">🚌</div><h3>Transport for Ireland</h3><p>Informații despre transportul public irlandez.</p><a class="btn" href="https://www.transportforireland.ie/" target="_blank" rel="noopener noreferrer">Planifică ↗</a>
+
+</article>
+
+<article class="card" data-search="irish rail trenuri irlanda">
+
+<div class="emoji">🚆</div><h3>Irish Rail</h3><p>Trenuri, bilete și orare în Irlanda.</p><a class="btn" href="https://www.irishrail.ie/" target="_blank" rel="noopener noreferrer">Vezi trenurile ↗</a>
+
+</article>
+
+<article class="card" data-search="rome2rio transport rute autobuze trenuri">
+
+<div class="emoji">🌍</div><h3>Rome2Rio</h3><p>Compară variante de transport între destinații.</p><a class="btn" href="https://www.rome2rio.com/" target="_blank" rel="noopener noreferrer">Planifică ↗</a>
+
+</article>
+
+<article class="card" data-search="dublin airport aeroport zboruri">
+
+<div class="emoji">🛫</div><h3>Dublin Airport</h3><p>Informații despre zboruri și aeroport.</p><a class="btn" href="https://www.dublinairport.com/" target="_blank" rel="noopener noreferrer">Deschide ↗</a>
+
+</article>
+
+<article class="card" data-search="visit ireland turism atractii">
+
+<div class="emoji">🍀</div><h3>Discover Ireland</h3><p>Informații despre locuri și atracții turistice din Irlanda.</p><a class="btn" href="https://www.discoverireland.ie/" target="_blank" rel="noopener noreferrer">Explorează ↗</a>
+
+</article>
+
+</div>
 
 </section>
 
-<section class="panel" id="ghiduri">
+<section id="ghiduri">
 
-<h2>🌍 Ghiduri utile</h2>
+<div class="heading"><h2>📚 Ghiduri și servicii oficiale</h2><p>Surse de informare pentru muncă, taxe, locuințe și drepturi.</p></div>
 
-<p>Aici vom publica ghiduri despre muncă, cazare și viața în străinătate.</p>
+<div class="grid">
 
-<a href="#acasa">← Înapoi la pagina principală</a>
+<article class="card" data-search="revenue taxe impozite PAYE rambursare taxe irlanda">
+
+<div class="emoji">💶</div><span class="tag">OFICIAL</span><h3>Revenue</h3><p>Taxe, PAYE, credite fiscale și declarații.</p><a class="btn" href="https://www.revenue.ie/" target="_blank" rel="noopener noreferrer">Servicii fiscale ↗</a>
+
+</article>
+
+<article class="card" data-search="citizens information drepturi munca locuinta beneficii">
+
+<div class="emoji">📖</div><span class="tag">OFICIAL</span><h3>Citizens Information</h3><p>Informații despre drepturi, muncă, locuire și beneficii.</p><a class="btn" href="https://www.citizensinformation.ie/" target="_blank" rel="noopener noreferrer">Citește ghiduri ↗</a>
+
+</article>
+
+<article class="card" data-search="gov.ie guvern servicii publice irlanda">
+
+<div class="emoji">🏛️</div><span class="tag">OFICIAL</span><h3>Gov.ie</h3><p>Portalul serviciilor guvernamentale irlandeze.</p><a class="btn" href="https://www.gov.ie/" target="_blank" rel="noopener noreferrer">Deschide ↗</a>
+
+</article>
+
+<article class="card" data-search="workplace relations drepturile angajatilor salarii concedii">
+
+<div class="emoji">⚖️</div><span class="tag">OFICIAL</span><h3>Workplace Relations</h3><p>Informații despre drepturile angajaților și condițiile de muncă.</p><a class="btn" href="https://www.workplacerelations.ie/" target="_blank" rel="noopener noreferrer">Află drepturile ↗</a>
+
+</article>
+
+<article class="card" data-search="rtb chiriasi proprietari depozit chirie irlanda">
+
+<div class="emoji">🏠</div><span class="tag">OFICIAL</span><h3>Residential Tenancies Board</h3><p>Informații pentru chiriași și proprietari.</p><a class="btn" href="https://rtb.ie/" target="_blank" rel="noopener noreferrer">Ghid de închiriere ↗</a>
+
+</article>
+
+<article class="card" data-search="mywelfare ajutoare sociale somaj irlanda">
+
+<div class="emoji">🤝</div><span class="tag">OFICIAL</span><h3>MyWelfare</h3><p>Acces la servicii sociale și cereri eligibile.</p><a class="btn" href="https://www.mywelfare.ie/" target="_blank" rel="noopener noreferrer">Deschide ↗</a>
+
+</article>
+
+<article class="card" data-search="mygovid identitate digitala servicii irlanda">
+
+<div class="emoji">🪪</div><span class="tag">OFICIAL</span><h3>MyGovID</h3><p>Identitate digitală pentru servicii publice.</p><a class="btn" href="https://www.mygovid.ie/" target="_blank" rel="noopener noreferrer">Accesează ↗</a>
+
+</article>
+
+<article class="card" data-search="threshold consiliere chiriasi locuinte irlanda">
+
+<div class="emoji">🏡</div><h3>Threshold</h3><p>Informații și sprijin pentru probleme legate de chirie.</p><a class="btn" href="https://threshold.ie/" target="_blank" rel="noopener noreferrer">Cere informații ↗</a>
+
+</article>
+
+<article class="card" data-search="mabs datorii buget bani consiliere irlanda">
+
+<div class="emoji">💰</div><h3>MABS</h3><p>Sprijin pentru buget, datorii și gestionarea banilor.</p><a class="btn" href="https://mabs.ie/" target="_blank" rel="noopener noreferrer">Află mai mult ↗</a>
+
+</article>
+
+<article class="card" data-search="your europe drepturi uniunea europeana munca">
+
+<div class="emoji">🇪🇺</div><h3>Your Europe</h3><p>Informații despre drepturile cetățenilor europeni.</p><a class="btn" href="https://europa.eu/youreurope/" target="_blank" rel="noopener noreferrer">Ghid european ↗</a>
+
+</article>
+
+</div>
 
 </section>
+
+<div class="notice">
+
+<strong>🔒 Siguranță online:</strong>
+
+Folosim linkuri către platforme cunoscute și servicii oficiale, dar asta nu garantează fiecare anunț sau vânzător. Nu trimite bani înainte să verifici oferta, identitatea persoanei și condițiile. Nu introduce parole, coduri bancare sau date personale pe site-uri necunoscute.
+
+</div>
 
 </main>
 
-<footer>AllInOne Abroad · Începutul unei noi oportunități</footer>
+<footer>
+
+<div style="font-size:22px;font-weight:bold">🌍 AllInOne Abroad</div>
+
+<p>Resurse utile pentru viața în străinătate.</p>
+
+<p>Linkurile duc către site-uri externe. AllInOne Abroad nu controlează conținutul sau ofertele acestora.</p>
+
+<p>© <span id="year"></span> AllInOne Abroad</p>
+
+<a href="#acasa">Înapoi sus ↑</a>
+
+</footer>
+
+<script>
+
+const form = document.getElementById("searchForm");
+
+const input = document.getElementById("searchInput");
+
+const cards = Array.from(document.querySelectorAll(".card[data-search]"));
+
+const info = document.getElementById("resultsInfo");
+
+const empty = document.getElementById("empty");
+
+function searchCards(event) {
+
+  if (event) event.preventDefault();
+
+  const query = input.value.trim().toLocaleLowerCase("ro");
+
+  let count = 0;
+
+  cards.forEach(card => {
+
+    const text = (card.innerText + " " + card.dataset.search)
+
+      .toLocaleLowerCase("ro");
+
+    const match = !query || text.includes(query);
+
+    card.hidden = !match;
+
+    if (match) count++;
+
+  });
+
+  document.querySelectorAll("main section").forEach(section => {
+
+    const visible = Array.from(section.querySelectorAll(".card"))
+
+      .some(card => !card.hidden);
+
+    section.hidden = !visible;
+
+  });
+
+  empty.style.display = count ? "none" : "block";
+
+  info.textContent = query
+
+    ? count + " platforme găsite pentru: " + input.value
+
+    : "Toate platformele disponibile: " + count;
+
+}
+
+form.addEventListener("submit", searchCards);
+
+input.addEventListener("input", searchCards);
+
+document.getElementById("year").textContent = new Date().getFullYear();
+
+document.querySelectorAll(".navlinks a").forEach(link => {
+
+  link.addEventListener("click", () => {
+
+    input.value = "";
+
+    searchCards();
+
+  });
+
+});
+
+searchCards();
+
+</script>
 
 </body>
 
