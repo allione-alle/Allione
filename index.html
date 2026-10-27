@@ -1,110 +1,146 @@
+
+
 <!DOCTYPE html>
 
 <html lang="ro">
 
 <head>
 
-  <meta charset="UTF-8">
+<meta charset="UTF-8">
 
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>AllInOne Abroad</title>
+<title>AllInOne Abroad</title>
 
-  <style>
+<style>
 
-    body {
+*{box-sizing:border-box}
 
-      margin: 0;
+body{margin:0;font-family:Arial,sans-serif;background:#f2f5f9;color:#17243a}
 
-      font-family: Arial, sans-serif;
+header{background:#12345a;color:white;text-align:center;padding:30px 15px}
 
-      background: #f3f6fa;
+header h1{margin:0;font-size:30px}
 
-      color: #172033;
+header p{margin-bottom:0}
 
-      text-align: center;
+nav{display:flex;justify-content:center;gap:18px;flex-wrap:wrap;background:#0c2440;padding:14px}
 
-    }
+nav a{color:white;text-decoration:none;font-weight:bold}
 
-    header {
+main{max-width:850px;margin:25px auto;padding:0 15px}
 
-      background: #12345a;
+h2{text-align:center}
 
-      color: white;
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(145px,1fr));gap:15px}
 
-      padding: 35px 15px;
+.card{display:block;background:white;padding:24px 12px;border-radius:12px;text-align:center;text-decoration:none;color:#12345a;box-shadow:0 2px 8px #0001}
 
-    }
+.card strong{display:block;font-size:18px;margin:10px 0}
 
-    h1 { margin: 0; font-size: 32px; }
+.card span{font-size:30px}
 
-    main { padding: 25px 15px; }
+.card:hover{background:#e3edfa}
 
-    .card {
+.panel{background:white;border-radius:12px;padding:22px;margin-top:20px}
 
-      background: white;
+footer{text-align:center;padding:25px;color:#536174}
 
-      margin: 15px auto;
-
-      padding: 20px;
-
-      max-width: 420px;
-
-      border-radius: 12px;
-
-    }
-
-    a { color: #1459a6; text-decoration: none; }
-
-  </style>
+</style>
 
 </head>
 
 <body>
 
-  <header>
+<header>
 
-    <h1>AllInOne Abroad</h1>
+<h1>AllInOne Abroad</h1>
 
-    <p>Tot ce ai nevoie pentru o viață în străinătate</p>
+<p>Tot ce ai nevoie pentru viața în străinătate</p>
 
-  </header>
+</header>
 
-  <main>
+<nav>
 
-    <div class="card">
+<a href="#acasa">Acasă</a>
 
-      <h2>🏠 Cazare</h2>
+<a href="#chirii">Chirii</a>
 
-      <p>Găsește o locuință potrivită.</p>
+<a href="#locuri-de-munca">Locuri de muncă</a>
 
-    </div>
+<a href="#anunturi">Anunțuri</a>
 
-    <div class="card">
+<a href="#ghiduri">Ghiduri utile</a>
 
-      <h2>💼 Locuri de muncă</h2>
+</nav>
 
-      <p>Descoperă oportunități de muncă.</p>
+<main>
 
-    </div>
+<section id="acasa">
 
-    <div class="card">
+<h2>Descoperă AllInOne Abroad</h2>
 
-      <h2>🛍️ Anunțuri</h2>
+<p>Găsește informații utile pentru a locui, a lucra și a te organiza în străinătate.</p>
 
-      <p>Cumpără, vinde și publică anunțuri.</p>
+<div class="cards">
 
-    </div>
+<a class="card" href="#chirii"><span>🏠</span><strong>Chirii</strong>Găsește o locuință</a>
 
-    <div class="card">
+<a class="card" href="#locuri-de-munca"><span>💼</span><strong>Locuri de muncă</strong>Descoperă oportunități</a>
 
-      <h2>ℹ️ Ghiduri utile</h2>
+<a class="card" href="#anunturi"><span>🛍️</span><strong>Anunțuri</strong>Cumpără și vinde</a>
 
-      <p>Informații practice pentru viața în străinătate.</p>
+<a class="card" href="#ghiduri"><span>🌍</span><strong>Ghiduri utile</strong>Informații practice</a>
 
-    </div>
+</div>
 
-  </main>
+</section>
+
+<section class="panel" id="chirii">
+
+<h2>🏠 Chirii</h2>
+
+<p>Aici vom publica anunțuri de locuințe disponibile în Irlanda și în alte țări.</p>
+
+<p>Poți reveni pentru a consulta anunțurile pe măsură ce vor fi adăugate.</p>
+
+<a href="#acasa">← Înapoi la pagina principală</a>
+
+</section>
+
+<section class="panel" id="locuri-de-munca">
+
+<h2>💼 Locuri de muncă</h2>
+
+<p>Aici vom adăuga oferte de muncă, țara, localitatea și detaliile pentru aplicare.</p>
+
+<a href="#acasa">← Înapoi la pagina principală</a>
+
+</section>
+
+<section class="panel" id="anunturi">
+
+<h2>🛍️ Anunțuri</h2>
+
+<p>Aici vom putea adăuga anunțuri de vânzare, servicii și alte oferte.</p>
+
+<a href="#acasa">← Înapoi la pagina principală</a>
+
+</section>
+
+<section class="panel" id="ghiduri">
+
+<h2>🌍 Ghiduri utile</h2>
+
+<p>Aici vom publica ghiduri despre muncă, cazare și viața în străinătate.</p>
+
+<a href="#acasa">← Înapoi la pagina principală</a>
+
+</section>
+
+</main>
+
+<footer>AllInOne Abroad · Începutul unei noi oportunități</footer>
 
 </body>
 
